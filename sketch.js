@@ -53,7 +53,7 @@ function draw(){
         noStroke();
         textSize(35)
         fill("white")
-        text("Score  " + score, width-300, 50)
+        text("Score" + score, width-300, 50)
     
     Engine.update(engine);
     //strokeWeight(4);
@@ -95,6 +95,8 @@ function mouseReleased(){
 function keyPressed(){
     if(keyCode === 32){
        slingshot.attach(bird.body);
+       Matter.Body.setPosition(bird.body,{x:200, y:50})
+       bird.trajectory=[];
     }
 }
 
